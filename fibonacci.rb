@@ -1,5 +1,4 @@
 class Fibo
-  attr_reader :n
   def initialize(n)
     @n = n
   end
@@ -8,11 +7,15 @@ class Fibo
     puts "#{cal}"
   end
 
-  def cal
-    return 0 if n.zero?
-    return 1 if n == 1
+  private
+  attr_reader :n
 
+  def cal
     a, b = 0, 1
+
+    return a if n == a
+    return b if n == b
+
     i = 2
     while i <= n
       a, b = b, a + b
